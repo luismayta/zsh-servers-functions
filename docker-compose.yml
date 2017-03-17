@@ -1,0 +1,14 @@
+version: '2'
+services:
+  zsh-servers-functions:
+    restart: always
+    build: .
+    image: luismayta/ubuntu-dotfiles:latest
+    volumes_from:
+      - source_store
+
+  # Volumes source
+  source_store:
+    image: busybox
+    volumes:
+      - ./:/app/
